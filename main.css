@@ -1,0 +1,267 @@
+@import url("https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  justify-content: center;
+  background: url(img/scattered-forcefields.png);
+  font-family: "Mulish", sans-serif;
+}
+
+main {
+  margin-top: 6rem;
+  width: 20rem;
+  max-height: 23rem;
+  box-shadow: 4px 6px 8px rgba(0, 0, 0, 0.1), 6px 6px 10px rgba(0, 0, 0, 0.07), 8px 8px 12px rgba(0, 0, 0, 0.05), 10px 10px 14px rgba(0, 0, 0, 0.03);
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  overflow: hidden;
+}
+main .top {
+  background-color: #8EC5FC;
+  background-image: linear-gradient(180deg, #8EC5FC 0%, #E0C3FC 38%, #ffffff 80%);
+  height: 10rem;
+  width: 100%;
+  border-radius: 10px;
+  text-align: center;
+  padding: 20px;
+}
+main .top p {
+  font-size: 4.5em;
+  letter-spacing: 5px;
+  color: #ffffff;
+  font-family: "La Belle Aurore", cursive;
+}
+main .top p span {
+  font-size: 0.2em;
+  font-family: "Mulish", sans-serif;
+  letter-spacing: 2px;
+}
+main .details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  transition: all 1s ease;
+  gap: 20px;
+}
+main .details .list {
+  width: 90%;
+  max-height: 9rem;
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+  padding: 0 15px 10px 15px;
+}
+main .details .list::-webkit-scrollbar-thumb {
+  background-color: #ffffff;
+}
+main .details .list::-webkit-scrollbar:vertical {
+  width: 4px;
+}
+main .details .list::-webkit-scrollbar-thumb {
+  background-color: #5faefd;
+  border-radius: 20px;
+}
+main .details .list::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+main .inpt-btn {
+  width: 250px;
+  position: relative;
+}
+main .inpt-btn input {
+  border: 1px solid rgba(142, 197, 252, 0.6);
+  border-radius: 5px;
+  height: 40px;
+  width: 250px;
+  padding-left: 10px;
+  background: #faf7fd;
+  transition: background 0.25s ease-out;
+  font-family: "Mulish", sans-serif;
+}
+main .inpt-btn input:focus {
+  border: 1px solid #5faefd;
+  outline: none;
+  background: none;
+}
+main .inpt-btn .btn {
+  color: #ffffff;
+  background: #8EC5FC;
+  border: none;
+  border-radius: 3.125rem;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  font-size: 1.5em;
+  font-weight: bold;
+  cursor: pointer;
+  opacity: 0;
+  transform: translate(0, -50%) scale(0) rotate(180deg);
+  transition: transform, opacity, 0.5s cubic-bezier(0.87, -0.41, 0.19, 1.44);
+}
+main .inpt-btn .btn:hover {
+  background: #5faefd;
+}
+main .inpt-btn .btn:focus {
+  opacity: 1;
+  transform: translate(50%, -50%) scale(1.1) rotate(0deg);
+}
+main .inpt-btn .btn:active {
+  opacity: 1;
+  transition: transform, opacity, 0.1s cubic-bezier(0.87, -0.41, 0.19, 1.44);
+  transform: translate(50%, -50%) scale(0.95) rotate(0deg);
+}
+
+.input:focus + .btn {
+  opacity: 1;
+  transform: translate(50%, -50%) scale(1) rotate(0deg);
+}
+
+.inpt-btn.btn:active {
+  opacity: 1;
+  transition: transform, opacity, 0.1s cubic-bezier(0.87, -0.41, 0.19, 1.44);
+  transform: translate(50%, -50%) scale(0.95) rotate(0deg);
+}
+
+.todo {
+  display: block;
+  position: relative;
+  padding: 1em 1em 1em 16%;
+  margin: 0 auto;
+  cursor: pointer;
+  border-bottom: solid 1px #E0C3FC;
+}
+
+.todo:last-child {
+  border-bottom: none;
+}
+
+.todo__state {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.todo__text {
+  color: #135156;
+  transition: all 0.4s linear 0.4s;
+}
+
+.todo__icon {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  margin: auto;
+  fill: none;
+  stroke: #27FDC7;
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.todo__line,
+.todo__box,
+.todo__check {
+  transition: stroke-dashoffset 0.8s cubic-bezier(0.9, 0, 0.5, 1);
+}
+
+.todo__circle {
+  stroke: #27FDC7;
+  stroke-dasharray: 1 6;
+  stroke-width: 0;
+  transform-origin: 13.5px 12.5px;
+  transform: scale(0.4) rotate(0deg);
+  -webkit-animation: none 0.8s linear;
+  animation: none 0.8s linear;
+}
+
+@-webkit-keyframes explode {
+  30% {
+    stroke-width: 3;
+    stroke-opacity: 1;
+    transform: scale(0.8) rotate(40deg);
+  }
+  100% {
+    stroke-width: 0;
+    stroke-opacity: 0;
+    transform: scale(1.1) rotate(60deg);
+  }
+}
+@keyframes explode {
+  30% {
+    stroke-width: 3;
+    stroke-opacity: 1;
+    transform: scale(0.8) rotate(40deg);
+  }
+  100% {
+    stroke-width: 0;
+    stroke-opacity: 0;
+    transform: scale(1.1) rotate(60deg);
+  }
+}
+.todo__box {
+  stroke-dasharray: 56.1053, 56.1053;
+  stroke-dashoffset: 0;
+  transition-delay: 0.16s;
+}
+
+.todo__check {
+  stroke: #27FDC7;
+  stroke-dasharray: 9.8995, 9.8995;
+  stroke-dashoffset: 9.8995;
+  transition-duration: 0.32s;
+}
+
+.todo__line {
+  stroke-dasharray: 168, 1684;
+  stroke-dashoffset: 168;
+}
+
+.todo__circle {
+  -webkit-animation-delay: 0.56s;
+  animation-delay: 0.56s;
+  -webkit-animation-duration: 0.56s;
+  animation-duration: 0.56s;
+}
+
+.todo__state:checked ~ .todo__text {
+  transition-delay: 0s;
+  color: #5EBEC1;
+  opacity: 0.6;
+}
+
+.todo__state:checked ~ .todo__icon .todo__box {
+  stroke-dashoffset: 56.1053;
+  transition-delay: 0s;
+}
+
+.todo__state:checked ~ .todo__icon .todo__line {
+  stroke-dashoffset: -8;
+}
+
+.todo__state:checked ~ .todo__icon .todo__check {
+  stroke-dashoffset: 0;
+  transition-delay: 0.48s;
+}
+
+.todo__state:checked ~ .todo__icon .todo__circle {
+  -webkit-animation-name: explode;
+  animation-name: explode;
+}/*# sourceMappingURL=main.css.map */
