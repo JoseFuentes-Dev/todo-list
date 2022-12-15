@@ -15,12 +15,22 @@ function addTodo(event){
     console.log(todoInput.value);
     console.log('click');
     event.preventDefault();
-    const todoDiv = document.createElement("div");
-    todoDiv.classList.add("todo");
-    const newTodo = document.createElement("li");
+    const todoLabel = document.createElement("label");
+    const inpt = document.createElement("input");
+    inpt.setAttribute("type","checkbox");
+    todoLabel.classList.add("todo");
+    inpt.classList.add("todo__state");
+    const svg = document.createElement("svg");
+    svg.classList.add("todo__icon");
+    svg.setAttribute("viewBox","0 0 200 25");
+    svg.setAttribute("xmlns","http://www.w3.org/2000/svg");
+    svg.setAttribute("xlmns:xlink","http://www.w3.org/1999/xlink");
+    const newTodo = document.createElement("div");
     newTodo.innerText = todoInput.value; 
-    newTodo.classList.add("todo-item");
-    todoDiv.appendChild(newTodo);
+    newTodo.classList.add("todo__text");
+    todoLabel.appendChild(inpt);
+    todoLabel.appendChild(newTodo);
+    todoLabel.appendChild(svg);
     //ADDING TO LOCAL STORAGE 
     if(todoInput.value ==0){
         console.log('llene el campo')
@@ -30,7 +40,7 @@ function addTodo(event){
     }else{
         err.style.opacity="0";
         saveLocalTodos(todoInput.value);
-        todoList.appendChild(todoDiv);
+        todoList.appendChild(todoLabel);
         todoInput.value = "";
     }
 }
