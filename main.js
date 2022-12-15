@@ -34,9 +34,22 @@ function addTodo(event){
  `;
  
 
+
     const newTodo = document.createElement("div");
     newTodo.innerText = todoInput.value; 
     newTodo.classList.add("todo__text");
+
+const edditbtn = document.createElement("button");
+edditbtn.innerHTML='<ion-icon name="create-outline"></ion-icon>';
+edditbtn.classList.add("eddit-btn");
+newTodo.appendChild(edditbtn);
+
+const delbtn = document.createElement("button");
+delbtn.innerHTML='<ion-icon name="trash-outline"></ion-icon>';
+delbtn.classList.add("delete-btn");
+newTodo.appendChild(delbtn);
+
+
 
     todoLabel.appendChild(newTodo);
 
