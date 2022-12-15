@@ -95,18 +95,18 @@ main .details .err.anime {
 }
 @-webkit-keyframes animateerr {
   0% {
-    left: 5px;
+    left: -5px;
   }
   100% {
-    left: -5px;
+    left: 5px;
   }
 }
 @keyframes animateerr {
   0% {
-    left: 5px;
+    left: -5px;
   }
   100% {
-    left: -5px;
+    left: 5px;
   }
 }
 main .details .list {
@@ -244,28 +244,6 @@ main .inpt-btn .btn:active {
 }
 .night .btns strong:nth-child(2) {
   display: none;
-}
-
-.todo {
-  margin: 0.5rem;
-  padding-left: 0.5rem;
-  background: white;
-  color: black;
-  font-size: 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: 0.5s;
-  border-radius: 2rem;
-}
-
-.todo-item {
-  padding: 0rem 0.5rem;
-}
-
-.todo-list {
-  min-width: 30%;
-  list-style: none;
 }
 
 .todo {
