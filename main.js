@@ -13,6 +13,7 @@ const todoList = document.querySelector(".list");
 
 //events
 todoButton.addEventListener("click", addTodo);
+todoList.addEventListener("click", deleteCheck);
 
 
 setInterval('err.style.opacity="0"',4000);
@@ -42,17 +43,17 @@ function addTodo(event){
 const edditbtn = document.createElement("button");
 edditbtn.innerHTML='<ion-icon name="create-outline"></ion-icon>';
 edditbtn.classList.add("eddit-btn");
-newTodo.appendChild(edditbtn);
+todoLabel.appendChild(edditbtn);
 
 const delbtn = document.createElement("button");
 delbtn.innerHTML='<ion-icon name="trash-outline"></ion-icon>';
 delbtn.classList.add("delete-btn");
-newTodo.appendChild(delbtn);
+todoLabel.appendChild(delbtn);
 
+console.log(delbtn);
 
 
     todoLabel.appendChild(newTodo);
-
     //ADDING TO LOCAL STORAGE 
     if(todoInput.value ==0){
         console.log('llene el campo')
@@ -63,8 +64,12 @@ newTodo.appendChild(delbtn);
     }else{
         err.style.opacity="0";
         saveLocalTodos(todoInput.value);
-        todoList.appendChild(todoLabel);
-        todoInput.value = "";
+        todoLabel.classList.add("slide2");
+
+            console.log("entro");
+            todoList.appendChild(todoLabel);
+            todoInput.value = "";
+
     }
 }
 //save local function
@@ -77,4 +82,27 @@ function saveLocalTodos(todo) {
     }
     todos.push(todo);
     localStorage.setItem("todos", JSON.stringify(todos));
+}
+
+function deleteCheck(e) {
+    const item = e.target;
+    console.log(item);
+    if(item.classList[0] === "delete-btn") {
+        const todo = item.parentElement;
+      
+        todo.classList.add("slide");
+        removeLocalTodos(todo);
+        todo.addEventListener("transitionend", ()=> {
+            todo.remove();
+        });
+    }
+}
+
+function removeLocalTodos(todo) {
+    let todos;
+    if(localStorage.getItem("todos") === null) {
+        todos = [];
+    } else {
+        todos = JSON.parse(localStorage.getItem("todos"));
+    }
 }

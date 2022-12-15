@@ -115,6 +115,7 @@ main .details .list {
   max-height: 8.9rem;
   scroll-behavior: smooth;
   overflow-y: scroll;
+  overflow-x: hidden;
   padding: 0 15px 10px 15px;
 }
 main .details .list::-webkit-scrollbar-thumb {
@@ -132,7 +133,7 @@ main .details .list::-webkit-scrollbar {
 }
 main .details .list .eddit-btn {
   position: absolute;
-  right: 2.1875rem;
+  right: 1.6rem;
   font-size: 1.4em;
   border: none;
   background: #fff;
@@ -153,6 +154,9 @@ main .details .list .delete-btn {
 }
 main .details .list .delete-btn:hover {
   filter: brightness(1.3);
+}
+main .details .list .delete-btn ion-icon {
+  pointer-events: none;
 }
 main .inpt-btn {
   width: 250px;
@@ -269,6 +273,39 @@ main .inpt-btn .btn:active {
 }
 .night .btns strong:nth-child(2) {
   display: none;
+}
+
+.slide {
+  transition: all 0.4s linear;
+  transform: translateX(10rem);
+  opacity: 0;
+}
+
+.slide2 {
+  -webkit-animation: appear 0.3s linear;
+          animation: appear 0.3s linear;
+}
+@-webkit-keyframes appear {
+  0% {
+    transform: translateX(10rem);
+  }
+  50% {
+    transform: translateX(-1rem);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes appear {
+  0% {
+    transform: translateX(10rem);
+  }
+  50% {
+    transform: translateX(-1rem);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 .todo {
