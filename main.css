@@ -11,10 +11,35 @@ body {
   min-width: 100vw;
   display: flex;
   justify-content: center;
-  background: url(img/scattered-forcefields.png);
+  background: url(img/dragon-scales.png);
+  background-size: contain;
+  -webkit-animation: animate 700s linear infinite;
+          animation: animate 700s linear infinite;
   font-family: "Mulish", sans-serif;
 }
 
+body.night {
+  background: url(img/dragon-scales\ Dark.png);
+  background-size: contain;
+}
+
+@-webkit-keyframes animate {
+  0% {
+    background-position: -10000px;
+  }
+  100% {
+    background-position: 20000px;
+  }
+}
+
+@keyframes animate {
+  0% {
+    background-position: -10000px;
+  }
+  100% {
+    background-position: 20000px;
+  }
+}
 main {
   margin-top: 6rem;
   width: 20rem;
@@ -58,7 +83,7 @@ main .details {
 }
 main .details .list {
   width: 90%;
-  max-height: 9rem;
+  max-height: 8.9rem;
   scroll-behavior: smooth;
   overflow-y: scroll;
   padding: 0 15px 10px 15px;
@@ -96,7 +121,7 @@ main .inpt-btn input:focus {
   background: none;
 }
 main .inpt-btn .btn {
-  color: #ffffff;
+  color: #fff;
   background: #8EC5FC;
   border: none;
   border-radius: 3.125rem;
@@ -134,6 +159,60 @@ main .inpt-btn .btn:active {
   opacity: 1;
   transition: transform, opacity, 0.1s cubic-bezier(0.87, -0.41, 0.19, 1.44);
   transform: translate(50%, -50%) scale(0.95) rotate(0deg);
+}
+
+.btns {
+  position: absolute;
+  top: 20px;
+  right: 29px;
+  width: 45px;
+  height: 45px;
+  background-color: #000;
+  font-size: 1.5em;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.btns strong {
+  display: block;
+}
+
+.btns strong:nth-child(1) {
+  display: none;
+}
+
+.night .top {
+  background-color: #379bfe;
+  background-image: linear-gradient(180deg, #379bfe 0%, #d3a3ff 38%, #ffffff 80%);
+}
+.night .inpt-btn input {
+  border: 1px solid rgba(211, 163, 255, 0.6);
+}
+.night .inpt-btn input:focus {
+  border: 1px solid #379bfe;
+}
+.night .inpt-btn .btn {
+  background: #d3a3ff;
+}
+.night .inpt-btn .btn:hover {
+  background: #379bfe;
+}
+.night .details .list::-webkit-scrollbar-thumb {
+  background-color: #379bfe;
+}
+.night .btns {
+  background: #fff;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5), 5px 5px 30px rgba(0, 0, 0, 0.05), inset -2px -2px 5px rgba(0, 0, 0, 0.1), inset 2px 2px 5px rgba(0, 0, 0, 0.05);
+}
+.night .btns strong:nth-child(1) {
+  display: block;
+}
+.night .btns strong:nth-child(2) {
+  display: none;
 }
 
 .todo {

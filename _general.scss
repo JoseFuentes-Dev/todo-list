@@ -10,6 +10,21 @@ body{
     min-width: 100vw;
     display: flex;
     justify-content: center;
-    background: url(img/scattered-forcefields.png);
+    background: url(img/dragon-scales.png);
+    background-size: contain;
+    animation: animate 700s linear infinite;
     font-family: 'Mulish', sans-serif;
+}
+body.night{
+    background: url(img/dragon-scales\ Dark.png);
+    background-size: contain;
+}
+@keyframes animate {
+    0%{
+        background-position: -10000px;
+    }
+    100%{
+        background-position: 20000px;
+    }
+    
 }
