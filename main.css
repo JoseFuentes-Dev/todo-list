@@ -81,6 +81,34 @@ main .details {
   transition: all 1s ease;
   gap: 20px;
 }
+main .details .err {
+  position: relative;
+  left: 0px;
+  bottom: 0px;
+  color: rgb(255, 0, 0);
+  font-size: 0.7rem;
+  opacity: 0;
+}
+main .details .err.anime {
+  -webkit-animation: animateerr 0.2s linear;
+          animation: animateerr 0.2s linear;
+}
+@-webkit-keyframes animateerr {
+  0% {
+    left: 5px;
+  }
+  100% {
+    left: -5px;
+  }
+}
+@keyframes animateerr {
+  0% {
+    left: 5px;
+  }
+  100% {
+    left: -5px;
+  }
+}
 main .details .list {
   width: 90%;
   max-height: 8.9rem;
@@ -129,7 +157,7 @@ main .inpt-btn .btn {
   height: 50px;
   position: absolute;
   right: 0;
-  top: 50%;
+  top: 30%;
   font-size: 1.5em;
   font-weight: bold;
   cursor: pointer;
@@ -165,20 +193,23 @@ main .inpt-btn .btn:active {
   position: absolute;
   top: 20px;
   right: 29px;
-  width: 45px;
-  height: 45px;
-  background-color: #000;
+  width: 40px;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.7);
   font-size: 1.5em;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
   cursor: pointer;
   border-radius: 10px;
 }
 
 .btns strong {
+  width: 100%;
+  height: 100%;
   display: block;
+  text-align: center;
+  -webkit-backdrop-filter: blur(1rem);
+          backdrop-filter: blur(1rem);
+  border-radius: 10px;
 }
 
 .btns strong:nth-child(1) {
@@ -213,6 +244,28 @@ main .inpt-btn .btn:active {
 }
 .night .btns strong:nth-child(2) {
   display: none;
+}
+
+.todo {
+  margin: 0.5rem;
+  padding-left: 0.5rem;
+  background: white;
+  color: black;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.5s;
+  border-radius: 2rem;
+}
+
+.todo-item {
+  padding: 0rem 0.5rem;
+}
+
+.todo-list {
+  min-width: 30%;
+  list-style: none;
 }
 
 .todo {
