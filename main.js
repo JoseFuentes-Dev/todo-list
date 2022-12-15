@@ -1,19 +1,23 @@
+//dark mode
 let body = document.querySelector('body');
 let btn = document.querySelector('.btns');
 btn.onclick=function(){
  body.classList.toggle('night')
 }
 
+//const declarate
 const todoInput = document.querySelector(".input");
 const todoButton = document.querySelector(".btn");
 const err = document.querySelector(".err");
 const todoList = document.querySelector(".list");
+
+//events
 todoButton.addEventListener("click", addTodo);
 
 
+setInterval('err.style.opacity="0"',4000);
+//add function 
 function addTodo(event){
-    console.log(todoInput.value);
-    console.log('click');
     event.preventDefault();
 
     const todoLabel = document.createElement("label");
@@ -28,6 +32,7 @@ function addTodo(event){
       <use xlink:href="#todo__circle" class="todo__circle"></use>
     </svg>
  `;
+ 
 
     const newTodo = document.createElement("div");
     newTodo.innerText = todoInput.value; 
@@ -41,6 +46,7 @@ function addTodo(event){
         err.style.opacity="1";
         err.classList.add('anime');
         setTimeout(() => err.classList.remove('anime'), 100);
+      
     }else{
         err.style.opacity="0";
         saveLocalTodos(todoInput.value);
@@ -48,6 +54,7 @@ function addTodo(event){
         todoInput.value = "";
     }
 }
+//save local function
 function saveLocalTodos(todo) {
     let todos;
     if(localStorage.getItem("todos") === null) {

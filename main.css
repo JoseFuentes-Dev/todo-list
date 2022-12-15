@@ -88,6 +88,7 @@ main .details .err {
   color: rgb(255, 0, 0);
   font-size: 0.7rem;
   opacity: 0;
+  transition: all 0.5s ease;
 }
 main .details .err.anime {
   -webkit-animation: animateerr 0.2s linear;
