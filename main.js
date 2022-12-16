@@ -10,7 +10,7 @@ const todoInput = document.querySelector(".input");
 const todoButton = document.querySelector(".btn");
 const err = document.querySelector(".err");
 const todoList = document.querySelector(".list");
-
+console.log(todoInput.value);
 //events
 todoButton.addEventListener("click", addTodo);
 todoList.addEventListener("click", deleteCheck);
@@ -35,25 +35,43 @@ function addTodo(event){
  `;
  
 
-
-    const newTodo = document.createElement("div");
-    newTodo.innerText = todoInput.value; 
-    newTodo.classList.add("todo__text");
+    const newTodo = document.createElement('input');
+    newTodo.classList.add('text');
+    newTodo.type = 'text';
+    newTodo.value = todoInput.value;
+    newTodo.setAttribute('readonly', 'readonly');
+    
 
 const edditbtn = document.createElement("button");
 edditbtn.innerHTML='<ion-icon name="create-outline"></ion-icon>';
 edditbtn.classList.add("eddit-btn");
 todoLabel.appendChild(edditbtn);
+console.log(edditbtn);
+
+
+edditbtn.addEventListener("click", (e)=>{
+if(edditbtn.className=="eddit-btn"){
+    edditbtn.className="save-btn";
+    edditbtn.innerHTML='<ion-icon name="checkmark-outline"></ion-icon>';
+    newTodo.removeAttribute("readonly");
+    newTodo.focus();
+    
+}
+else {
+    edditbtn.innerHTML = '<ion-icon name="create-outline"></ion-icon>';
+    edditbtn.className="eddit-btn";
+    newTodo.setAttribute("readonly", "readonly");
+}
+});
 
 const delbtn = document.createElement("button");
 delbtn.innerHTML='<ion-icon name="trash-outline"></ion-icon>';
 delbtn.classList.add("delete-btn");
 todoLabel.appendChild(delbtn);
 
-console.log(delbtn);
-
 
     todoLabel.appendChild(newTodo);
+
     //ADDING TO LOCAL STORAGE 
     if(todoInput.value ==0){
         console.log('llene el campo')
@@ -65,8 +83,6 @@ console.log(delbtn);
         err.style.opacity="0";
         saveLocalTodos(todoInput.value);
         todoLabel.classList.add("slide2");
-
-            console.log("entro");
             todoList.appendChild(todoLabel);
             todoInput.value = "";
 
@@ -84,12 +100,12 @@ function saveLocalTodos(todo) {
     localStorage.setItem("todos", JSON.stringify(todos));
 }
 
+
+//Delete Function
 function deleteCheck(e) {
     const item = e.target;
-    console.log(item);
     if(item.classList[0] === "delete-btn") {
         const todo = item.parentElement;
-      
         todo.classList.add("slide");
         removeLocalTodos(todo);
         todo.addEventListener("transitionend", ()=> {

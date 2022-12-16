@@ -79,7 +79,6 @@ main .details {
   width: 100%;
   position: relative;
   transition: all 1s ease;
-  gap: 20px;
 }
 main .details .err {
   position: relative;
@@ -112,7 +111,7 @@ main .details .err.anime {
 }
 main .details .list {
   width: 90%;
-  max-height: 8.9rem;
+  max-height: 8.7rem;
   scroll-behavior: smooth;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -131,6 +130,16 @@ main .details .list::-webkit-scrollbar-thumb {
 main .details .list::-webkit-scrollbar {
   -webkit-appearance: none;
 }
+main .details .list .text {
+  border: none;
+  font-size: 1em;
+  font-family: "Mulish", sans-serif;
+  width: 80%;
+}
+main .details .list .text:focus {
+  color: rgb(128, 127, 127);
+  outline: none;
+}
 main .details .list .eddit-btn {
   position: absolute;
   right: 1.6rem;
@@ -142,6 +151,24 @@ main .details .list .eddit-btn {
 }
 main .details .list .eddit-btn:hover {
   filter: brightness(1.3);
+}
+main .details .list .eddit-btn ion-icon {
+  pointer-events: none;
+}
+main .details .list .save-btn {
+  position: absolute;
+  right: 1.6rem;
+  font-size: 1.4em;
+  border: none;
+  background: #fff;
+  color: #379bfe;
+  cursor: pointer;
+}
+main .details .list .save-btn:hover {
+  filter: brightness(1.3);
+}
+main .details .list .save-btn ion-icon {
+  pointer-events: none;
 }
 main .details .list .delete-btn {
   position: absolute;
@@ -168,6 +195,7 @@ main .inpt-btn input {
   height: 40px;
   width: 250px;
   padding-left: 10px;
+  padding-right: 30px;
   background: #faf7fd;
   transition: background 0.25s ease-out;
   font-family: "Mulish", sans-serif;

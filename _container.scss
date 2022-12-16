@@ -39,7 +39,7 @@ main{
         width: 100%;
         position: relative;
         transition: all 1s ease;
-        gap: 20px;
+
         .err{
             position: relative;
             left: 0px;
@@ -62,7 +62,7 @@ main{
         }
         .list{
             width: 90%;
-            max-height: 8.9rem;
+            max-height: 8.7rem;
             scroll-behavior: smooth;
             overflow-y:scroll;
             overflow-x: hidden;
@@ -80,6 +80,17 @@ main{
                 &::-webkit-scrollbar {
                     -webkit-appearance: none;
                 }
+                .text{
+                    border: none;
+                    font-size: 1em;
+                    font-family: 'Mulish', sans-serif;
+                    width: 80%;
+                    &:focus{
+                        color: rgb(128, 127, 127);
+                        outline: none;
+
+                    }
+                }
                 .eddit-btn{
                     position: absolute;
                     right: 1.6rem;
@@ -91,6 +102,25 @@ main{
                     &:hover{
                         filter: brightness(1.3);
                     }
+                    ion-icon{
+                        pointer-events: none;
+
+                    }
+                }
+                .save-btn{
+                    position: absolute;
+                    right: 1.6rem;
+                    font-size: 1.4em;
+                    border: none;
+                    background: #fff;
+                    color: #379bfe;
+                    cursor: pointer;
+                    &:hover{
+                        filter: brightness(1.3);
+                    }
+                    ion-icon{
+                        pointer-events: none;
+                    }
                 }
                 .delete-btn{
                     position: absolute;
@@ -100,11 +130,13 @@ main{
                     background: #fff;
                     color: rgb(255, 0, 0);
                     cursor: pointer;
+                   
                     &:hover{
                         filter: brightness(1.3);
                     }
                     ion-icon{
                         pointer-events: none;
+
                     }
                 }
                                       
@@ -120,6 +152,7 @@ main{
                 height: 40px;
                 width: 250px;
                 padding-left: 10px;
+                padding-right: 30px;
                 background: #faf7fd;
                 transition: background 0.25s ease-out;
                 font-family: 'Mulish', sans-serif;
