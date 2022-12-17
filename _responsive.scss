@@ -2,19 +2,19 @@
 @media only screen and (max-width:610px){
     main{
         width: 90%;
-        .details{
-            font-size: 13px;
-            .input{
-                font-size: 13px;
-            }
+        // .details{
+        //     font-size: 13px;
+        //     .input{
+        //         font-size: 13px;
+        //     }
 
-        }
+        // }
     }
 }
 @media screen and (-webkit-min-device-pixel-ratio:0) {
 	select:focus,
 	textarea:focus,
 	input:focus {
-		font-size: 14px;
+		font-size: 16px;
 	}
 }
