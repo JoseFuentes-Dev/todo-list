@@ -6,6 +6,9 @@
             font-size: 13px;
             .input{
                 font-size: 13px;
+                &:focus{
+                    font-size: 14px;
+                }
             }
 
         }
