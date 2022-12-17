@@ -10,13 +10,13 @@ body{
     min-width: 100vw;
     display: flex;
     justify-content: center;
-    background: url(img/dragon-scales.png);
+    background: url(../img/dragon-scales.png);
     background-size: contain;
     animation: animate 1000s linear infinite;
     font-family: 'Mulish', sans-serif;
 }
 body.night{
-    background: url(img/dragon-scales\ Dark.png);
+    background: url(../img/dragon-scales\ Dark.png);
     background-size: contain;
 }
 @keyframes animate {

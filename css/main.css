@@ -11,7 +11,7 @@ body {
   min-width: 100vw;
   display: flex;
   justify-content: center;
-  background: url(img/dragon-scales.png);
+  background: url(../img/dragon-scales.png);
   background-size: contain;
   -webkit-animation: animate 1000s linear infinite;
           animation: animate 1000s linear infinite;
@@ -19,7 +19,7 @@ body {
 }
 
 body.night {
-  background: url(img/dragon-scales\ Dark.png);
+  background: url(../img/dragon-scales\ Dark.png);
   background-size: contain;
 }
 
