@@ -528,4 +528,7 @@ main .inpt-btn .btn:active {
   main .details {
     font-size: 14px;
   }
+  main .details .input {
+    font-size: 14px;
+  }
 }/*# sourceMappingURL=main.css.map */
