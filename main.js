@@ -63,7 +63,7 @@ setInterval('err.style.opacity="0"',4000);
 
 //add function 
 function addTodo(event){
-    footer.style.opacity="1";
+    
     event.preventDefault();
 
     const todoLabel = document.createElement("label");
@@ -159,6 +159,7 @@ todoLabel.appendChild(delbtn);
       
     }else{
         err.style.opacity="0";
+        footer.style.opacity="1";
         saveLocalTodos(todoInput.value);
         todoLabel.classList.add("slide2");
             todoList.appendChild(todoLabel);
