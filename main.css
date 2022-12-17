@@ -13,8 +13,8 @@ body {
   justify-content: center;
   background: url(img/dragon-scales.png);
   background-size: contain;
-  -webkit-animation: animate 700s linear infinite;
-          animation: animate 700s linear infinite;
+  -webkit-animation: animate 1000s linear infinite;
+          animation: animate 1000s linear infinite;
   font-family: "Mulish", sans-serif;
 }
 
@@ -43,13 +43,14 @@ body.night {
 main {
   margin-top: 6rem;
   width: 20rem;
-  max-height: 23rem;
+  max-height: 24rem;
   box-shadow: 4px 6px 8px rgba(0, 0, 0, 0.1), 6px 6px 10px rgba(0, 0, 0, 0.07), 8px 8px 12px rgba(0, 0, 0, 0.05), 10px 10px 14px rgba(0, 0, 0, 0.03);
   background: #ffffff;
   display: flex;
   flex-direction: column;
   border-radius: 10px;
   overflow: hidden;
+  position: relative;
 }
 main .top {
   background-color: #8EC5FC;
@@ -80,10 +81,39 @@ main .details {
   position: relative;
   transition: all 1s ease;
 }
+main .details .listerr {
+  position: absolute;
+  left: 15%;
+  bottom: 0;
+  color: rgb(255, 0, 0);
+  opacity: 0;
+  font-size: 0.6rem;
+  transition: all 0.5s ease;
+}
+main .details .listerr.anime {
+  -webkit-animation: animatteerr 0.2s linear;
+          animation: animatteerr 0.2s linear;
+}
+@-webkit-keyframes animatteerr {
+  0% {
+    left: 10%;
+  }
+  100% {
+    left: 15%;
+  }
+}
+@keyframes animatteerr {
+  0% {
+    left: 10%;
+  }
+  100% {
+    left: 15%;
+  }
+}
 main .details .err {
   position: relative;
-  left: 0px;
-  bottom: 0px;
+  left: 0;
+  bottom: 0;
   color: rgb(255, 0, 0);
   font-size: 0.7rem;
   opacity: 0;
@@ -336,6 +366,27 @@ main .inpt-btn .btn:active {
   }
 }
 
+.todo_footer {
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 7%;
+  border-top: 1px solid #379bfe;
+  font-size: 0.8em;
+  padding: 5px;
+  color: black;
+  background: #fff;
+  z-index: 50;
+  opacity: 0;
+  transition: all 1s ease;
+}
+.todo_footer span:hover {
+  color: #379bfe;
+  cursor: pointer;
+}
+
 .todo {
   display: block;
   position: relative;
@@ -343,6 +394,7 @@ main .inpt-btn .btn:active {
   margin: 0 auto;
   cursor: pointer;
   border-bottom: solid 1px #E0C3FC;
+  z-index: 1;
 }
 
 .todo:last-child {
@@ -366,7 +418,7 @@ main .inpt-btn .btn:active {
   top: 0;
   bottom: 0;
   left: 0;
-  width: 100%;
+  width: 83%;
   height: auto;
   margin: auto;
   fill: none;

@@ -5,7 +5,7 @@
     margin: 0 auto;
     cursor: pointer;
     border-bottom: solid 1px #E0C3FC;
-
+z-index: 1;
   }
   .todo:last-child {
     border-bottom: none;
@@ -27,7 +27,7 @@
     top: 0;
     bottom: 0;
     left: 0;
-    width: 100%;
+    width: 83%;
     height: auto;
     margin: auto;
     fill: none;
@@ -35,7 +35,6 @@
     stroke-width: 2;
     stroke-linejoin: round;
     stroke-linecap: round;
-
   }
   .todo__line,
   .todo__box,
