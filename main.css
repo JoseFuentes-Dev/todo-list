@@ -43,7 +43,7 @@ body.night {
 main {
   margin-top: 6rem;
   width: 20rem;
-  max-height: 24rem;
+  max-height: 30rem;
   box-shadow: 4px 6px 8px rgba(0, 0, 0, 0.1), 6px 6px 10px rgba(0, 0, 0, 0.07), 8px 8px 12px rgba(0, 0, 0, 0.05), 10px 10px 14px rgba(0, 0, 0, 0.03);
   background: #ffffff;
   display: flex;
@@ -141,7 +141,7 @@ main .details .err.anime {
 }
 main .details .list {
   width: 90%;
-  max-height: 8.7rem;
+  max-height: 15rem;
   scroll-behavior: smooth;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -526,9 +526,9 @@ main .inpt-btn .btn:active {
     width: 90%;
   }
   main .details {
-    font-size: 14px;
+    font-size: 13px;
   }
   main .details .input {
-    font-size: 14px;
+    font-size: 13px;
   }
 }/*# sourceMappingURL=main.css.map */
