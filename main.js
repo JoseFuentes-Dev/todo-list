@@ -16,6 +16,9 @@ footer.addEventListener("click", filterTodo);
 
 function filterTodo(e) {
     const label = document.querySelectorAll(".todo");
+    const all =  document.querySelector(".span_all");
+    const comple = document.querySelector(".span_completed");
+    const incomple = document.querySelector(".span_incomplete");
     label.forEach(ele => {   
         if(ele.childNodes[1].checked===true){
             ele.classList.add("checked");
@@ -24,15 +27,25 @@ function filterTodo(e) {
         }
     if(e.target.innerText==="All"){
             ele.style.display="block";
+            all.style.color="#379bfe";
+            comple.style.color="black";
+            incomple.style.color= "black";
      }
      if(e.target.innerText==="Completed"){
+        all.style.color="black";
+        comple.style.color="#379bfe";
+        incomple.style.color= "black";
                 if(ele.classList.contains("checked")){
                     ele.style.display="block";
+                    
                 }else{
                     ele.style.display="none";
                 }
         }
  if(e.target.innerText==="Incomplete"){
+    comple.style.color="black";
+    all.style.color="black";
+    incomple.style.color= "#379bfe";
         if(ele.classList.contains("checked")){
             ele.style.display="none";
         }else{
