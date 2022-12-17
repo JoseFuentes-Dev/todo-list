@@ -523,7 +523,7 @@ main .inpt-btn .btn:active {
 /* responsive mobile -more-than: Mobile: 610px */
 @media only screen and (max-width: 610px) {
   main {
-    width: 95%;
+    width: 90%;
   }
   main .details {
     font-size: 14px;
