@@ -384,6 +384,9 @@ main .inpt-btn .btn:active {
   transition: all 1s ease;
   border-radius: 0 0 10px 10px;
 }
+.todo_footer .span_all {
+  color: #379bfe;
+}
 .todo_footer span:hover {
   color: #379bfe;
   cursor: pointer;

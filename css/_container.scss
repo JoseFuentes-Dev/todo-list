@@ -330,6 +330,9 @@ main{
     opacity: 0;
     transition: all 1s ease;
     border-radius: 0 0 10px 10px;
+    .span_all{
+        color: #379bfe;
+    }
     span{
         &:hover{
 color: #379bfe;
