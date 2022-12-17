@@ -1,0 +1,9 @@
+/* responsive mobile -more-than: Mobile: 610px */
+@media only screen and (max-width:610px){
+    main{
+        width: 95%;
+        .details{
+            font-size: 14px;
+        }
+    }
+}

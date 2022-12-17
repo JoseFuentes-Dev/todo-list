@@ -219,7 +219,7 @@ main .inpt-btn {
   width: 250px;
   position: relative;
 }
-main .inpt-btn input {
+main .inpt-btn .input {
   border: 1px solid rgba(142, 197, 252, 0.6);
   border-radius: 5px;
   height: 40px;
@@ -230,7 +230,7 @@ main .inpt-btn input {
   transition: background 0.25s ease-out;
   font-family: "Mulish", sans-serif;
 }
-main .inpt-btn input:focus {
+main .inpt-btn .input:focus {
   border: 1px solid #5faefd;
   outline: none;
   background: none;
@@ -516,4 +516,14 @@ main .inpt-btn .btn:active {
 .todo__state:checked ~ .todo__icon .todo__circle {
   -webkit-animation-name: explode;
   animation-name: explode;
+}
+
+/* responsive mobile -more-than: Mobile: 610px */
+@media only screen and (max-width: 610px) {
+  main {
+    width: 95%;
+  }
+  main .details {
+    font-size: 14px;
+  }
 }/*# sourceMappingURL=main.css.map */
