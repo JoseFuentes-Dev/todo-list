@@ -1,3 +1,4 @@
+  // list animated(css svg animated settings )
   .todo {
     display: block;
     position: relative;
@@ -5,7 +6,7 @@
     margin: 0 auto;
     cursor: pointer;
     border-bottom: solid 1px #E0C3FC;
-z-index: 1;
+    z-index: 1;
   }
   .todo:last-child {
     border-bottom: none;

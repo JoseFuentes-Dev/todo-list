@@ -1,10 +1,13 @@
+// import fonts
 @import url('https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300&display=swap');
+// global settings
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+// body settings
 body{
     min-height: 100vh;
     min-width: 100vw;
@@ -15,10 +18,12 @@ body{
     animation: animate 1000s linear infinite;
     font-family: 'Mulish', sans-serif;
 }
+// body whith class night(darkmode)
 body.night{
     background: url(../img/dragon-scales\ Dark.png);
     background-size: contain;
 }
+// background keyframes
 @keyframes animate {
     0%{
         background-position: -10000px;

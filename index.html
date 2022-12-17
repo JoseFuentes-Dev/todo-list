@@ -7,14 +7,16 @@
     <title>Todo List</title>
     <meta name="description" content="Todo List App">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="shortcut icon" href="img/create.svg" type="image/x-icon">
 </head>
 <body>
+<!-- button dark & light mode -->
   <div class="btns">
     <strong>🌞</strong>
     <strong>🌙</strong>
 </div>
 <main>
-    <!-- partial:index.partial.html -->
+    <!--svg declaration -->
 <svg viewBox="0 0 0 0" style="position: absolute; z-index: -1; opacity: 0;">
     <defs>
       <linearGradient id="boxGradient" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="25" y2="25">
@@ -33,23 +35,26 @@
       <circle id="todo__circle" cx="13.5" cy="12.5" r="10"></circle>
     </defs>
   </svg>
-  
+  <!-- top list section -->
     <div class="top">
         <p>Todo<span>list</span></p>
     </div>
+    <!-- detail list -->
     <div class="details">
         <div class="inpt-btn">
             <input type="text" id="input_top" class="input"> <button class="btn">+</button>
+            <!-- error msg -->
             <span class="err">
               Text field cannot be blank</span>
          </div>
-
+       <!-- list todo list -->
            <div class="list">
             </div>
 
 
 
     </div>
+    <!-- footer whit span contain -->
     <footer class="todo_footer">
       <span class="span_all">All</span>
       <span class="span_completed">Completed</span>
@@ -58,6 +63,7 @@
 </main>
 
 <script src="main.js"></script>
+<!-- ionicons scripts -->
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
